@@ -16,7 +16,7 @@ export class HomePage implements OnInit {
     id: 237,
     src: 'https://preview.ibb.co/kPE1D6/clouds.jpg',
     srcHighRes: 'https://preview.ibb.co/kPE1D6/clouds.jpg',
-    author: 'André Spieker',
+    author: 'Jude Kuti',
   };
   imgThumbnail = {
     id: 1040,
