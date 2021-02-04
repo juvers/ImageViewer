@@ -14,14 +14,14 @@ export class HomePage implements OnInit {
 
   imgAvatar = {
     id: 237,
-    src: 'https://picsum.photos/id/237/200/200.jpg',
-    srcHighRes: 'https://picsum.photos/id/237/3500/2095.jpg',
+    src: 'https://preview.ibb.co/kPE1D6/clouds.jpg',
+    srcHighRes: 'https://preview.ibb.co/kPE1D6/clouds.jpg',
     author: 'André Spieker',
   };
   imgThumbnail = {
     id: 1040,
-    src: 'https://picsum.photos/id/1040/200/200.jpg',
-    srcHighRes: 'https://picsum.photos/id/1040/4496/3000.jpg',
+    src: 'https://preview.ibb.co/kZGsLm/img8.jpg',
+    srcHighRes: 'https://preview.ibb.co/kZGsLm/img8.jpg',
     author: 'Rachel Davis',
   };
 
