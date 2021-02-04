@@ -1,20 +1,112 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>
+            Ionic Image Viewer Demo
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+    <div class="ion-padding">
+        <ion-text>
+            Click on the image to open viewer & zoom
+        </ion-text>
+    </div>
+    <div class="ion-padding-horizontal">
+        <!-- DEFAULT -->
+        <ion-text>
+            <h2>Default</h2>
+        </ion-text>
+        <ion-img-viewer [src]="imgUrl"></ion-img-viewer>
+        <br />
+        <br />
+        <!-- SCHEME -->
+        <ion-text>
+            <h2>Scheme</h2>
+        </ion-text>
+        <ion-text>
+            <h3>Auto (default)</h3>
+        </ion-text>
+        <ion-img-viewer title="Silhoutte (Scheme / Auto)" text="Photo by Mayur Gala on Unsplash" [src]="imgUrl" scheme="auto"></ion-img-viewer>
+        <br />
+        <ion-list>
+            <ion-item lines="full">
+                <ion-icon slot="start" name="moon"></ion-icon>
+                <ion-label>
+                    Toggle Dark Theme
+                </ion-label>
+                <ion-toggle checked="prefersDark" (ionChange)="toggleTheme()" slot="end"></ion-toggle>
+            </ion-item>
+        </ion-list>
+        <br />
+        <ion-text>
+            <h3>Dark</h3>
+        </ion-text>
+        <ion-img-viewer title="Silhoutte (Scheme / Dark)" text="Photo by Mayur Gala on Unsplash" [src]="imgUrl" scheme="dark"></ion-img-viewer>
+        <br />
+        <ion-text>
+            <h3>Light</h3>
+        </ion-text>
+        <ion-img-viewer title="Silhoutte (Scheme / Light)" text="Photo by Mayur Gala on Unsplash" [src]="imgUrl" scheme="light"></ion-img-viewer>
+        <br />
+        <br />
+        <ion-text>
+            <h2>SlideOptions</h2>
+        </ion-text>
+        <ion-text>
+            <h3>zoom 7x</h3>
+        </ion-text>
+        <ion-img-viewer title="Silhoutte (slideOptions / zoom 7x)" text="Photo by Mayur Gala on Unsplash" [src]="imgUrl" [slideOptions]="{ zoom: { maxRatio: 7}}"></ion-img-viewer>
+        <br />
+        <br />
+        <!-- DIRECTIVE -->
+        <ion-text>
+            <h2>Directive</h2>
+        </ion-text>
+        <ion-text>
+            <h3>ion-img</h3>
+        </ion-text>
+        <ion-img ionImgViewer scheme="light" [src]="imgUrl" title="Directive ionImgViewer" text="Photo by Mayur Gala on Unsplash"></ion-img>
+        <br />
+        <br />
+        <ion-text>
+            <h3>ion-avatar</h3>
+        </ion-text>
+        <ion-item>
+            <ion-avatar slot="start">
+                <img ionImgViewer [src]="imgAvatar.src" [srcHighRes]="imgAvatar.srcHighRes" title="Directive ion-avatar" [text]="imgAvatar.author" />
+            </ion-avatar>
+            <ion-label>Awesome Dog</ion-label>
+        </ion-item>
+        <br />
+        <br />
+        <ion-text>
+            <h3>ion-thumbnail</h3>
+        </ion-text>
+        <ion-item>
+            <ion-thumbnail slot="start">
+                <img ionImgViewer [src]="imgThumbnail.src" [srcHighRes]="imgThumbnail.srcHighRes" [text]="imgThumbnail.author" />
+            </ion-thumbnail>
+            <ion-label>Photo by {{imgThumbnail.author}}</ion-label>
+        </ion-item>
+        <ion-text>
+            <h3>img</h3>
+        </ion-text>
+        <div class="ion-text-center">
+            <img ionImgViewer [src]="imgUrl" title="Directive img" text="Photo by Mayur Gala on Unsplash" width="50%" />
+        </div>
+        <br />
+        <ion-item-divider> </ion-item-divider>
+        <br />
+        <!-- DIRECTIVE -->
+        <ion-text>
+            <h2>Programmatic</h2>
+        </ion-text>
+        <ion-text>
+            <h3>ion-button</h3>
+        </ion-text>
+        <ion-button (click)="openViewer()">Open Viewer</ion-button>
+    </div>
+    <br />
+    <br />
 </ion-content>

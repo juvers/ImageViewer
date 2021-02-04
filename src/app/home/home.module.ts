@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
+import { RouterModule } from '@angular/router';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
 
 @NgModule({
@@ -12,7 +14,13 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    RouterModule.forChild([
+      {
+        path: '',
+        component: HomePage
+      }
+    ]),
+    NgxIonicImageViewerModule
   ],
   declarations: [HomePage]
 })
